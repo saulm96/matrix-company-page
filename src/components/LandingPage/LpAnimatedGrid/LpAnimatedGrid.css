@@ -1,0 +1,133 @@
+.lp-animated-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  overflow: hidden;
+
+  z-index: 3;
+}
+
+.lp-animated-grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 90%;
+  height: 90%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "item1 item1 item2 item2 item2"
+    "item1 item1 item3 item4 item4";
+}
+
+.lp-grid-item {
+  height: auto;
+  display: flex;
+  padding: 1.5rem;
+
+  background-color: var(--card-dark-color);
+  color: var(--title-color);
+
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lp-grid-item-1 {
+  grid-area: item1;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+.lp-grid-item-1 h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.lp-grid-item-content-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 1rem;
+
+  width: 100%;
+
+  font-size: 1.2rem;
+}
+
+.lp-grid-item-2 {
+  grid-area: item2;
+}
+
+.lp-grid-item-2 h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.lp-grid-item-2 img {
+  width: 32px;}
+
+.lp-grid-item-3 {
+  grid-area: item3;
+  padding: 0;
+
+  mask-image: linear-gradient(
+      to top,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 1%,
+      rgba(0, 0, 0, 0.6) 10%,
+      black 20%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 1%,
+      rgba(0, 0, 0, 0.6) 10%,
+      black 20%
+    ),
+    linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 1%,
+      rgba(0, 0, 0, 0.6) 10%,
+      black 20%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 1%,
+      rgba(0, 0, 0, 0.6) 10%,
+      black 20%
+    );
+  mask-composite: intersect;
+}
+
+.lp-grid-item-3 video {
+  width: 100%;
+  object-fit: cover;
+}
+
+.lp-grid-item-4 {
+  grid-area: item4;
+}
+
+.chart-holder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 90%;
+  max-width: 100%;
+  margin: 20px auto;
+}
