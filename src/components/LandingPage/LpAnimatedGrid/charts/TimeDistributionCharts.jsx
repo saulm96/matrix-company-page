@@ -57,7 +57,7 @@ const realChartData = {
 
 export const TimeComparisonChart = () => {
   const { ref, inView } = useInView({
-    threshold: 0.8,
+    threshold: 0.5,
   });
 
   const [chartData, setChartData] = useState(initialChartData);

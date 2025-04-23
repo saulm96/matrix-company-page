@@ -6,6 +6,7 @@
   width: 100%;
   padding: 1rem;
   overflow: hidden;
+  margin-top: 10em;
 
   z-index: 3;
 }
@@ -16,9 +17,10 @@
   width: 90%;
   height: 90%;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "item1 item1 item2 item2 item2"
-    "item1 item1 item3 item4 item4";
+    "item1 item1 item3 item3 item4";
 }
 
 .lp-grid-item {
@@ -35,6 +37,8 @@
 
 .lp-grid-item-1 {
   grid-area: item1;
+  opacity: 0.6;
+  transform: translateX(-100px);
 
   flex-direction: column;
   align-items: center;
@@ -63,17 +67,92 @@
 
 .lp-grid-item-2 {
   grid-area: item2;
+  flex-direction: column;
+  overflow: hidden;
+
+  opacity: 0.5;
+  transform: translateX(100px);
+}
+.card2-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.lp-grid-item-2 h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 1.5rem;
+.card2-content-wrapper p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: left;
+  text-shadow: 2px 2px 5px rgba(187, 211, 243, 0.7);
+  margin-top: 1.5rem;
+
+  position: absolute;
+}
+.card2-content-wrapper p:nth-child(2) {
+  top: 30%;
+  left: 5%;
+
+  font-size: 1.2rem;
+  text-shadow: none;
+
+
+}
+.card2-content-wrapper p:nth-child(3) {
+  top: 60%;
+  left: 15%;
+
+  font-size: 1.2rem;
+  text-shadow: none;
+  margin-top: 0;
 }
 
-.lp-grid-item-2 img {
-  width: 32px;}
+
+.img-card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.img-card-container img {
+  width: 35%;
+  position: absolute;
+}
+.img-card-container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.img-card-container img:nth-child(1) {
+  top: 7em;
+  right: 12%;
+
+  transform: rotate(-25deg);
+
+  z-index: 3;
+
+}
+
+.img-card-container img:nth-child(2) {
+  top: 3em;
+  right: -4em;
+
+  transform: rotate(-10deg) scaleX(-1);
+
+  z-index: 2;
+}
+
+.img-card-container img:nth-child(3) {
+  width: 20%;
+  top: -1em;
+  right: -3em;
+  transform: scaleX(-1);
+
+  z-index: 1;
+}
 
 .lp-grid-item-3 {
   grid-area: item3;
@@ -108,6 +187,9 @@
       black 20%
     );
   mask-composite: intersect;
+
+  opacity: 0.5;
+  transform: translateY(80px);
 }
 
 .lp-grid-item-3 video {
@@ -117,6 +199,58 @@
 
 .lp-grid-item-4 {
   grid-area: item4;
+
+  opacity: 0.7;
+  transform: translateX(100px);
+}
+
+.card4-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Título de beneficios */
+.benefits-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Estilos para los items de la lista */
+.list-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.list-item-wrapper:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.list-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.list-item-img {
+  min-width: 24px;
+  color: var(--icons-blue-light-color);
+}
+
+.list-item-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.list-title-wrapper .list-item-text {
+  font-weight: bold;
 }
 
 .chart-holder {

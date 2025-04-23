@@ -1,0 +1,29 @@
+.animatedTextContainer {
+  width: 100%;
+  height: 300vh;
+
+  color: var(--title-color);
+
+  background: #000000;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    var(--icons-blue-light-color) 50%,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(5, 0, 0, 1) 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+
+
+.mascot-img{
+    width: 25em;
+    position: sticky;
+    top: 50%;     
+    right: 5rem;
+}

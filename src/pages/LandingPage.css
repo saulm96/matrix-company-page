@@ -1,6 +1,9 @@
 :root {
   --title-color: rgb(227, 252, 250);
+
   --card-dark-color: rgba(14, 14, 15, 0.8);
+
+  --icons-blue-light-color: rgba(51, 207, 255, 0.7);
 }
 
 header {
@@ -130,4 +133,10 @@ footer {
     transform: translateY(0);
     opacity: 0.7;
   }
+}
+
+
+
+.extra-space{
+  height: 200vh;
 }

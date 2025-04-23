@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect } from "react";
 
 import LpBackground from "../components/LandingPage/LpBackground";
 import LpAnimatedGrid from "../components/LandingPage/LpAnimatedGrid/LpAnimatedGrid";
+import { LpAnimatedTextSection } from "../components/LandingPage/LpAnimatedTextSection/LpAnimatedTextSection";
 
 import ScrollLogo from "../assets/icons/scroll-icon.svg";
 import "./LandingPage.css";
@@ -27,7 +28,7 @@ const LandingPage = () => {
           trigger: stickyWrapperRef.current,
           pin: true,
           start: "top top",
-          end: "+=30%",
+          end: "+=40%",
           scrub: 1,
         },
       });
@@ -94,6 +95,7 @@ const LandingPage = () => {
           <LpBackground ref={backgroundRef} />
         </div>
         <LpAnimatedGrid />
+        <LpAnimatedTextSection />
       </main>
 
       <footer>
