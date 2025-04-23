@@ -1,33 +1,31 @@
 /* Estilos base existentes */
 .animated-title-wrapper {
-    margin-top: 2rem;
     width: 100%;
     height: 15vh;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    transform: rotate(45deg) translate(30%, -200%);
-    opacity: 0;
+
     position: relative;
-    overflow: hidden;
+    z-index: 3;
+
+    transform: translateY(-200%);
+
   }
   
   .animated-title {
     font-size: 5rem;
     font-weight: 500;
     text-align: center;
-    position: relative; 
   }
-  
 
   .glitched-text .animated-title {
     text-shadow: red -4px 0px, cyan 3px 0px;
     animation: glitch-skew 3s infinite linear alternate-reverse;
   }
   
- 
   .glitched-text .animated-title::before,
   .glitched-text .animated-title::after {
     content: attr(data-text); 
@@ -39,15 +37,13 @@
     opacity: 0.8;
   }
   
-  
   .glitched-text .animated-title::before {
     left: -2px;
     text-shadow: -2px 0 #ff003c;
     animation: glitch-anim-1 2s infinite linear alternate-reverse;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
   }
-  
-  
+   
   .glitched-text .animated-title::after {
     left: 2px;
     text-shadow: 2px 0 #3498db;
@@ -55,7 +51,6 @@
     clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
   }
   
-
   @keyframes glitch-anim-1 {
     0% {
       clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
@@ -95,7 +90,6 @@
     }
   }
   
-  
   @keyframes glitch-anim-2 {
     0% {
       clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
@@ -134,8 +128,7 @@
       transform: translate(0);
     }
   }
-  
-  
+   
   @keyframes glitch-skew {
     0%, 100% {
       transform: skew(0deg);

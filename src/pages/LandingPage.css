@@ -23,6 +23,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
 }
 
 .sticky-wrapper {
@@ -47,6 +50,7 @@ main {
   top: 0;
   z-index: 2;
 }
+
 .hero-title {
   text-shadow: 2px 2px 5px rgba(187, 211, 243, 0.7);
   font-size: 7rem;
@@ -64,7 +68,7 @@ main {
 .hero-description {
   width: 35%;
   padding: 2rem;
-  margin-top: 3rem;
+  margin-top: 5rem;
 
   align-self: center;
   text-align: left;
@@ -77,6 +81,7 @@ main {
 
   opacity: 0;
 }
+
 .scroll-adviser {
   font-size: 1.2rem;
   display: flex;
@@ -134,8 +139,6 @@ footer {
     opacity: 0.7;
   }
 }
-
-
 
 .extra-space{
   height: 200vh;

@@ -10,7 +10,6 @@ const LpBackground = forwardRef((props, ref) => {
 
   return (
     <>
-
       <svg width="0" height="0" style={{ position: 'absolute', overflow: 'hidden' }}>
         <defs>
           <clipPath id={clipPathId} clipPathUnits="objectBoundingBox">

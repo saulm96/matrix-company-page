@@ -1,27 +1,30 @@
 import { useRef, useLayoutEffect } from "react";
-
 import LpBackground from "../components/LandingPage/LpBackground";
 import LpAnimatedGrid from "../components/LandingPage/LpAnimatedGrid/LpAnimatedGrid";
 import { LpAnimatedTextSection } from "../components/LandingPage/LpAnimatedTextSection/LpAnimatedTextSection";
-
 import ScrollLogo from "../assets/icons/scroll-icon.svg";
 import "./LandingPage.css";
-
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger, gsap.AttrPlugin);
+import { ScrollTrigger} from "gsap/all";
 
 const LandingPage = () => {
+  gsap.registerPlugin(ScrollTrigger, gsap.AttrPlugin);
   const mainRef = useRef(null);
   const backgroundRef = useRef(null);
   const stickyWrapperRef = useRef(null);
   const scrollAdviserRef = useRef(null);
 
   const finalClipPathPoints = "-0.05 -0.05, -0.05 0.25, -0.05 0.5, -0.05 0.75, -0.05 1.05, 0.5 1.05, 1.05 1.05, 1.05 0.75, 1.05 0.5, 1.05 0.25, 1.05 -0.05, 0.5 -0.05";
-    const polygonSelector = "#rotation-polygon";
+  const polygonSelector = "#rotation-polygon";
 
   useLayoutEffect(() => {
+    const polygonElement = mainRef.current?.querySelector(polygonSelector);
+
+    if (!polygonElement) {
+       console.error("Polygon element not found.");
+       return;
+    }
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -30,15 +33,14 @@ const LandingPage = () => {
           start: "top top",
           end: "+=40%",
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       });
 
       tl.to(
-        polygonSelector,
+        polygonElement,
         {
           attr: { points: finalClipPathPoints },
-          transformOrigin: "50% 0%",
-          rotation: 180,
           ease: "none",
         },
         0
@@ -94,12 +96,10 @@ const LandingPage = () => {
           </section>
           <LpBackground ref={backgroundRef} />
         </div>
-        <LpAnimatedGrid />
-        <LpAnimatedTextSection />
+       <LpAnimatedTextSection />
       </main>
-
       <footer>
-        <p>&copy; 2023 Your Company</p>
+        <p>&copy; 2025 Your Company</p>
       </footer>
     </>
   );
